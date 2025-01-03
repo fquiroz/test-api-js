@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <ul id="lista-tareas">
+        <li>Cargando tareas...</li>
+
+    </ul>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const tareas = await obtenerTareas();
+                const listaTareas = document.getElementById('lista-tareas');
+                
+                tareas.forEach(tarea => {
+                    const li = document.createElement('li');
+                    li.textContent = tarea.titulo;
+                    listaTareas.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error al mostrar las tareas:', error);
+            }
+        });
+    </script> -
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="valen.js"></script>
+</body>
+</html>
