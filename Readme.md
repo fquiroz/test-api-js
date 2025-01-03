@@ -19,7 +19,7 @@ cd test-api-js
 npm install
 
 4. Inicia el servidor:
-npm start  
+npm run start  
 
 5. Abre tu navegador y navega a:
 http://localhost:3000
